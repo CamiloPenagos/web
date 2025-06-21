@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentos - Parques de Pakistan V</title>
+  <link rel="stylesheet" type="text/css" href="styles/estilo.css">
+  <script src="https://kit.fontawesome.com/5b54ae6ee5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Parques de Pakistan V</h1>
+    <nav>
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+      <div class="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="administracion.html">Administración</a></li>
+        <li><a href="documentos.html">Documentos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="consejo.html" class="activo">Consejo</a></li>
+        <li><a href="convivencia.html">Convivencia</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="clasificados.html">Clasificados</a></li>
+        <li><a href="pagos.html">Pagos</a></li>
+      </ul>
+      </div>
+    </nav>
+  </header>
+<main>
+    <h2>Documentos Institucionales</h2>
+    <ul>
+        <li>
+            Ley 675 de 2001  
+            <a href="https://www.habitatbogota.gov.co/transparencia/normatividad/normatividad/ley-675-2001" target="_blank">
+                <i class="fas fa-external-link-alt" style="font-size:20px;"></i>
+            </a>
+        </li>
+        <li>
+            Cartilla Ley 675 de 2001  
+            <a href="https://www.minvivienda.gov.co/sites/default/files/2020-07/cartilla-propiedad-horizontal-web.pdf" target="_blank">
+                <i class="fas fa-external-link-alt" style="font-size:20px;"></i>
+            </a>
+        </li>
+        <li>
+            Reglamento de Propiedad Horizontal
+            <a href="#"><i class="fas fa-download" style="font-size:20px;"></i></a>
+        </li>
+        <li>
+            Manual de Convivencia
+            <a href="#"><i class="fas fa-download" style="font-size:20px;"></i></a>
+        </li>
+    </ul>
+
+    <h2>Otros Documentos</h2>
+    <p>
+        Consulta actas de asamblea, actas del consejo de administración, informes, presupuestos y otros documentos importantes del conjunto.
+    </p>
+    <p>
+    </p>
+    <img src="images/pw.jpg" alt="Imagen de acceso a documentos con clave" style="max-width:300px; width:100%; height:auto; border-radius:8px; margin-top:15px;" />
+
+    <div class="alerta-documentos">
+      <p><strong>Nota importante:</strong> En cumplimiento de las buenas prácticas de privacidad y seguridad de la información, las actas de asamblea, actas de consejo de administración, informes financieros, presupuestos y demás documentos internos no se encuentran disponibles para consulta pública.</p>
+      <p>Si eres propietario o residente autorizado y deseas acceder a estos documentos, por favor envía un correo a <strong>admonparquesdepakistan5h@gmail.com</strong> solicitando el acceso al repositorio digital del conjunto. La administración validará tu solicitud y te proporcionará el enlace correspondiente.</p>
+    </div>
+
+
+</main>
+
+<footer>
+    <div id="pie">
+      <p><i class="fas fa-envelope-square"></i> admonparquesdepakistan5h@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Pakistan V, Flandes, Tolima</p>
+      <p><i class="fas fa-phone"></i> Administración: +57 5879874 - Portería: +57 5879874</p>
+    </div>
+    <p class="credito">Desarrollo Web: camilopenagosc@gmail.com</p>
+  </footer>
+     <!-- SCRIPT: menú responsive -->
+  <script>
+const toggleBtn = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+toggleBtn.addEventListener("click", () => {
+  menu.classList.toggle("abierto");
+
+  // Cambiar ícono de ☰ a ✖ y viceversa
+  toggleBtn.innerHTML = menu.classList.contains("abierto") ? "&times;" : "&#9776;";
+});
+
+  </script>
+</body>
+</html>

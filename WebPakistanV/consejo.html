@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consejo - Parques de Pakistan V</title>
+  <link rel="stylesheet" type="text/css" href="styles/estilo.css">
+  <script src="https://kit.fontawesome.com/5b54ae6ee5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Parques de Pakistan V</h1>
+    <nav>
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+      <div class="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="administracion.html">Administración</a></li>
+        <li><a href="documentos.html">Documentos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="consejo.html" class="activo">Consejo</a></li>
+        <li><a href="convivencia.html">Convivencia</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="clasificados.html">Clasificados</a></li>
+        <li><a href="pagos.html">Pagos</a></li>
+      </ul>
+    </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Consejo de Administración</h2>
+
+    <div id="perfil">
+      <img src="images/consejo.jpg" alt="Consejo de Administración" width="400px" height="300px">
+      <div class="desc">
+        <h3>Miembros del Consejo</h3>
+        <ul>
+          <li>Juan Perez Casa E - 00</li>
+          <li>Juan Perez Casa E - 00</li>
+          <li>Juan Perez Casa E - 00</li>
+          <li>Juan Perez Casa E - 00</li>
+          <li>Juan Perez Casa E - 00</li>
+        </ul>
+
+        <h3>Correo del Consejo</h3>
+        <p>consejopakistanv@gmail.com</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px;">
+      <h2>Comunicados del Consejo de Administración</h2>
+      <p>Consulta aquí las decisiones, convocatorias y novedades emitidas por el Consejo de Administración del Conjunto Pakistan V</p>
+    </div>
+    <div id="contenedor-noticias">
+    <article class="noticia destacada">
+      <h3>📌 Nueva Política de Uso de Zonas Comunes</h3>
+      <p><strong>Fecha de publicación:</strong> 1 de junio de 2025</p>
+      <p><strong>Fecha de entrada en vigencia:</strong> 10 de junio de 2025</p>
+      <p>El Consejo de Administración informa que a partir del 10 de junio entra en vigencia una nueva política de uso de las zonas comunes. Esta incluye horarios actualizados para el uso del gimnasio, salón social y parque infantil, así como directrices para el cuidado y mantenimiento de estos espacios. El objetivo es optimizar el uso equitativo y el disfrute de todos los residentes.</p>
+    </article>
+
+    <article class="noticia">
+      <h3>📣 Asamblea Extraordinaria Virtual</h3>
+      <p><strong>Fecha de publicación:</strong> 25 de mayo de 2025</p>
+      <p><strong>Fecha del evento:</strong> 5 de junio de 2025, 7:00 p.m.</p>
+      <p>Se convoca a todos los propietarios a una Asamblea Extraordinaria Virtual que se realizará el 5 de junio. En esta se abordarán temas clave como la aprobación del presupuesto 2025-2026, elección de nuevo proveedor de vigilancia, y revisión de mejoras en seguridad. El enlace de conexión será enviado por correo electrónico. Es importante su participación activa.</p>
+    </article>
+
+    <!-- Agrega más noticias aquí -->
+    </div>
+
+      <!-- Controles de paginación -->
+  <div class="paginacion">
+    <button id="anterior">Anterior</button>
+    <span id="numeros"></span>
+    <button id="siguiente">Siguiente</button>
+  </div>
+</section>
+
+
+  </main>
+
+<footer>
+    <div id="pie">
+      <p><i class="fas fa-envelope-square"></i> admonparquesdepakistan5h@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Pakistan V, Flandes, Tolima</p>
+      <p><i class="fas fa-phone"></i> Administración: +57 5879874 - Portería: +57 5879874</p>
+    </div>
+    <p class="credito">Desarrollo Web: camilopenagosc@gmail.com</p>
+  </footer>
+
+  <script>
+  const noticias = document.querySelectorAll('#contenedor-noticias .noticia');
+  const noticiasPorPagina = 3;
+  let paginaActual = 1;
+  const totalPaginas = Math.ceil(noticias.length / noticiasPorPagina);
+
+  function mostrarNoticias(pagina) {
+    noticias.forEach((noticia, i) => {
+      noticia.style.display = (i >= (pagina - 1) * noticiasPorPagina && i < pagina * noticiasPorPagina) ? 'block' : 'none';
+    });
+
+    document.getElementById('numeros').textContent = `Página ${pagina} de ${totalPaginas}`;
+    document.getElementById('anterior').disabled = pagina === 1;
+    document.getElementById('siguiente').disabled = pagina === totalPaginas;
+  }
+
+  document.getElementById('anterior').addEventListener('click', () => {
+    if (paginaActual > 1) {
+      paginaActual--;
+      mostrarNoticias(paginaActual);
+    }
+  });
+
+  document.getElementById('siguiente').addEventListener('click', () => {
+    if (paginaActual < totalPaginas) {
+      paginaActual++;
+      mostrarNoticias(paginaActual);
+    }
+  });
+
+  mostrarNoticias(paginaActual);
+
+  //SCRIPT: menú responsive   
+
+const toggleBtn = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+toggleBtn.addEventListener("click", () => {
+  menu.classList.toggle("abierto");
+
+  // Cambiar ícono de ☰ a ✖ y viceversa
+  toggleBtn.innerHTML = menu.classList.contains("abierto") ? "&times;" : "&#9776;";
+});
+
+</script>
+
+</body>
+</html>

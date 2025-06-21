@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clasificados - Parques de Pakistan V</title>
+  <link rel="stylesheet" type="text/css" href="styles/estilo.css">
+  <script src="https://kit.fontawesome.com/5b54ae6ee5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Parques de Pakistan V</h1>
+    <nav>
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+      <div class="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="administracion.html">Administración</a></li>
+        <li><a href="documentos.html">Documentos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="consejo.html">Consejo</a></li>
+        <li><a href="convivencia.html">Convivencia</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="clasificados.html">Clasificados</a></li>
+        <li><a href="pagos.html">Pagos</a></li>
+      </ul>
+      </div>
+    </nav>
+  </header>
+<!-- Dentro del <main> -->
+<main>
+  <section>
+    <h2>Clasificados del Conjunto</h2>
+    <p>Consulta aquí los anuncios de compra, venta, arriendo o servicios ofrecidos por los residentes. Para publicar, contacta a la administración.</p>
+
+    <div id="contenedor-clasificados">
+      <article class="noticia clasificado">
+        <h3>📦 Venta de Nevera LG</h3>
+        <p><strong>Publicado:</strong> 30 de mayo de 2025</p>
+        <p>Se vende nevera LG No Frost de 380L en excelente estado, poco uso. Precio: $1.200.000 negociables.</p>
+        <p><strong>Contacto:</strong> Andrés - Apto 204 Torre 2 - 3001234567</p>
+      </article>
+
+      <article class="noticia clasificado">
+        <h3>🏠 Arriendo Apartamento 2do Piso</h3>
+        <p><strong>Publicado:</strong> 28 de mayo de 2025</p>
+        <p>Se arrienda apartamento de 3 habitaciones, 2 baños, parqueadero privado. Torre 3. Canon: $1.100.000.</p>
+        <p><strong>Contacto:</strong> Mariana - 3109876543</p>
+      </article>
+
+      <article class="noticia clasificado">
+        <h3>🧼 Servicio de Aseo y Lavado</h3>
+        <p><strong>Publicado:</strong> 25 de mayo de 2025</p>
+        <p>Ofrezco servicio de aseo general, lavado de baños, ventanas, y planchado. Tarifas flexibles.</p>
+        <p><strong>Contacto:</strong> Patricia - 3214567890</p>
+      </article>
+
+      <article class="noticia clasificado">
+        <h3>🚲 Venta de Bicicleta</h3>
+        <p><strong>Publicado:</strong> 20 de mayo de 2025</p>
+        <p>Bicicleta GW rodado 29, excelente estado. Precio: $800.000.</p>
+        <p><strong>Contacto:</strong> Luis - 3145678901</p>
+      </article>
+
+      <article class="noticia clasificado">
+        <h3>👕 Venta de Ropa Deportiva</h3>
+        <p><strong>Publicado:</strong> 18 de mayo de 2025</p>
+        <p>Conjunto deportivo para mujer, talla S y M. Entrega inmediata. $90.000.</p>
+        <p><strong>Contacto:</strong> Carolina - 3123456789</p>
+      </article>
+    </div>
+
+    <div class="paginacion">
+      <button id="anterior">Anterior</button>
+      <span id="numeros">Página 1</span>
+      <button id="siguiente">Siguiente</button>
+    </div>
+  </section>
+</main>
+
+
+ <footer>
+    <div id="pie">
+      <p><i class="fas fa-envelope-square"></i> admonparquesdepakistan5h@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Pakistan V, Flandes, Tolima</p>
+      <p><i class="fas fa-phone"></i> Administración: +57 5879874 - Portería: +57 5879874</p>
+    </div>
+    <p class="credito">Desarrollo Web: camilopenagosc@gmail.com</p>
+  </footer>
+
+  <!-- SCRIPT DE PAGINACIÓN -->
+  <script>
+    const clasificados = document.querySelectorAll('#contenedor-clasificados .clasificado');
+    const porPagina = 3;
+    let pagina = 1;
+    const totalPaginas = Math.ceil(clasificados.length / porPagina);
+
+    function mostrar(pagina) {
+      clasificados.forEach((el, i) => {
+        el.style.display = (i >= (pagina - 1) * porPagina && i < pagina * porPagina) ? 'block' : 'none';
+      });
+      document.getElementById('numeros').textContent = `Página ${pagina} de ${totalPaginas}`;
+      document.getElementById('anterior').disabled = pagina === 1;
+      document.getElementById('siguiente').disabled = pagina === totalPaginas;
+    }
+
+    document.getElementById('anterior').addEventListener('click', () => {
+      if (pagina > 1) {
+        pagina--;
+        mostrar(pagina);
+      }
+    });
+
+    document.getElementById('siguiente').addEventListener('click', () => {
+      if (pagina < totalPaginas) {
+        pagina++;
+        mostrar(pagina);
+      }
+    });
+
+    mostrar(pagina);
+
+      // SCRIPT: menú responsive
+
+const toggleBtn = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+toggleBtn.addEventListener("click", () => {
+  menu.classList.toggle("abierto");
+
+  // Cambiar ícono de ☰ a ✖ y viceversa
+  toggleBtn.innerHTML = menu.classList.contains("abierto") ? "&times;" : "&#9776;";
+});
+
+
+  </script>
+</body>
+</html>

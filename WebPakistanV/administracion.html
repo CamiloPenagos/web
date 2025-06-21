@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración - Parques de Pakistan V</title>
+  <link rel="stylesheet" type="text/css" href="styles/estilo.css">
+  <script src="https://kit.fontawesome.com/5b54ae6ee5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Parques de Pakistan V</h1>
+    <nav>
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+      <div class="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="administracion.html">Administración</a></li>
+        <li><a href="documentos.html">Documentos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="consejo.html" class="activo">Consejo</a></li>
+        <li><a href="convivencia.html">Convivencia</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="clasificados.html">Clasificados</a></li>
+        <li><a href="pagos.html">Pagos</a></li>
+      </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h2>Administración</h2>
+
+    <div id="perfil">
+      <img src="images/Foto_Admon.jpg" alt="Administrador" width="300px" height="300px">
+      <div class="desc">
+        <h3>Administradora</h3>
+        <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Ha sido el texto de relleno estándar de las industrias desde el año 1500.</p>
+        <h4>Horarios de Atención</h4>
+        <table class="tabla-horario">
+          <thead>
+            <tr>
+              <th>Día</th>
+              <th>Horario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Martes</td>
+              <td>1:00 pm a 4:00 pm</td>
+            </tr>
+            <tr>
+              <td>Miércoles</td>
+              <td>4:00 pm a 7:00 pm</td>
+            </tr>
+            <tr>
+              <td>Jueves</td>
+              <td>4:00 pm a 7:00 pm</td>
+            </tr>
+            <tr>
+              <td>Viernes</td>
+              <td>9:00 am a 1:00 pm</td>
+            </tr>
+            <tr>
+              <td>Sábado</td>
+              <td>2° y 4° sábado de 9:00 am a 11:00 am</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </main>
+
+<footer>
+    <div id="pie">
+      <p><i class="fas fa-envelope-square"></i> admonparquesdepakistan5h@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Pakistan V, Flandes, Tolima</p>
+      <p><i class="fas fa-phone"></i> Administración: +57 5879874 - Portería: +57 5879874</p>
+    </div>
+    <p class="credito">Desarrollo Web: camilopenagosc@gmail.com</p>
+  </footer>
+   <!-- SCRIPT: menú responsive -->
+  <script>
+    const toggleBtn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    toggleBtn.addEventListener("click", () => {
+      menu.classList.toggle("abierto");
+
+      // Cambiar ícono de ☰ a ✖ y viceversa
+      toggleBtn.innerHTML = menu.classList.contains("abierto") ? "&times;" : "&#9776;";
+    });
+
+  </script>
+</body>
+</html>
