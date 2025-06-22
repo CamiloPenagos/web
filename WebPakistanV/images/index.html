@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parques de Pakistan V</title>
+  <link rel="stylesheet" type="text/css" href="styles/estilo.css">
+  <script src="https://kit.fontawesome.com/5b54ae6ee5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Parques de Pakistan V</h1>
+    <nav>
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="administracion.html">Administración</a></li>
+          <li><a href="documentos.html">Documentos</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="consejo.html" class="activo">Consejo</a></li>
+          <li><a href="convivencia.html">Convivencia</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="clasificados.html">Clasificados</a></li>
+          <li><a href="pagos.html">Pagos</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <img src="images/Inicio.jpg" alt="Vista panorámica del conjunto Botanika Alameda" class="imagen-portada" />
+
+  <main>
+    <h2>Toda la información del conjunto a tu alcance</h2>
+    <ul>
+      <li>Acceder a información de la administración, consejo y comité de convivencia.</li>
+      <li>Acceder a información de servicios del conjunto.</li>
+      <li>Acceder al link de pago en línea de la cuota de administración y otros.</li>
+      <li>Realizar consultas o reportar información a la administración, consejo o comité de convivencia.</li>
+      <li>Consultar actas de asamblea, informes, presupuesto, citaciones a asamblea, manual de convivencia, y otros documentos de interés.</li>
+      <li>Consultar noticias y actividades del conjunto.</li>
+      <li>Accede a la sección de Clasificados para ver o publicar anuncios del conjunto.</li>
+    </ul>
+
+    <h2>Actualiza tus datos</h2>
+    <div id="banner">
+      <a href="#" class="boton-actualizar">🔄 ACTUALIZAR DATOS</a>
+    </div>
+    <br>
+    <h2>Contacto PQRS</h2>
+    <form action="https://formsubmit.co/camilopenagosc@gmail.com" method="POST" class="form-pqrs">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://camilopenagos.github.io/web/WebPakistanV/gracias.html">
+      <input type="hidden" name="_subject" value="Nueva PQRS desde el sitio web Botanika Alameda">
+      <input type="hidden" name="_template" value="box">
+
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="Nombre" required>
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="Correo electrónico" required>
+
+      <label for="tipo">Tipo de solicitud:</label>
+      <select id="tipo" name="Tipo de solicitud" required>
+        <option value="">Seleccione</option>
+        <option value="Petición">Petición</option>
+        <option value="Queja">Queja</option>
+        <option value="Reclamo">Reclamo</option>
+        <option value="Sugerencia">Sugerencia</option>
+      </select>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="Mensaje" rows="5" required></textarea>
+
+      <button type="submit">Enviar PQRS</button>
+    </form>
+  </main>
+
+  <footer>
+    <div id="pie">
+      <p><i class="fas fa-envelope-square"></i> admonparquesdepakistan5h@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Pakistan V, Flandes, Tolima</p>
+      <p><i class="fas fa-phone"></i> Administración: +57 5879874 - Portería: +57 5879874</p>
+    </div>
+    <p class="credito">Desarrollo Web: camilopenagosc@gmail.com</p>
+  </footer>
+
+  <!-- SCRIPT: menú responsive -->
+  <script>
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+
+  toggleBtn.addEventListener("click", () => {
+    menu.classList.toggle("abierto");
+
+    // Cambiar ícono de ☰ a ✖ y viceversa
+    toggleBtn.innerHTML = menu.classList.contains("abierto") ? "&times;" : "&#9776;";
+  });
+  </script>
+</body>
+</html>
